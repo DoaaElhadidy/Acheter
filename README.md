@@ -1,6 +1,8 @@
 # Acheter
 E-commerce website using, Web API with Nodejs Technology , Front-end with Angular-6 Technology
 
+Website like Amazon website contain food products as vegetables and Fruits Store, Each user can login and sign-up seeing the products and can buy it , On the other side There is seller who can only post Products and see it Connecting with admin approval 
+
 If you want to run this project 
 
 Open Code in the editor
