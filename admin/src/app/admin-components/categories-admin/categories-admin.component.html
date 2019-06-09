@@ -1,0 +1,28 @@
+<div class="card bg-light my-5">
+  <div class="card-body">
+    <h4 class="card-title">Categories</h4>
+    <br>
+    <div class="row">
+      <input type="text" class="form-control col-7" [(ngModel)]="newCategory" placeholder="Add New Category"
+  style="margin-left: 15px; padding: 10px" #catName (keyup.enter)="addCategory(catName.value);catName.value=''" />
+      <button class="btn btn-success" style="margin-left: 15px"
+        (click)="addCategory(catName.value);catName.value=''">Add</button>
+     </div>
+    <br>
+    <table class="table">
+      <tr>
+        <th>#</th>
+        <th>Category</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let category of categories; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{ category.name }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteCategory(i)" style="margin: 10px">Delete</button>
+        </td>
+      </tr>
+    </table>
+    <h3 *ngIf="categories.length==0"> No Catgeories Found </h3>
+  </div>
+</div>

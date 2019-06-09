@@ -1,0 +1,25 @@
+<div class="card bg-light my-5">
+  <div class="card-body">
+    <h4 class="card-title">Users</h4>
+<table class="table table-hovered">
+    <tr>
+      <th>#</th>
+      <th>User Name</th>
+      <th>Email</th>
+      
+      <th></th>
+    </tr>
+  
+    <tr *ngFor="let user of users; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+
+      <td>
+          <button class="btn btn-danger" (click)="deleteUser(i)"  style="margin: 10px">Delete</button> 
+      </td>
+    </tr>
+  </table>
+  <h3 *ngIf="users.length==0"> No Users Found </h3>
+  </div>
+  </div>

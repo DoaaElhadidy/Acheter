@@ -1,0 +1,57 @@
+<section id="myProducts">
+  <div class="container p-5 card">
+    <app-message></app-message>
+    <div *ngIf="!orders" class="m-auto">
+      <h1 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <h3 *ngIf="orders && !orders.length" class="display-2 text-center mt-5">My orders is Empty</h3>
+    <div *ngIf="orders && orders.length" class="row">
+      <div class="col">
+        <h4 class="display-4">My orders</h4>
+        <div class="row">
+          <div class="offset-4 col-2 d-none d-md-block">
+            <p>
+              <small class="text-muted">totalPrice</small>
+            </p>
+          </div>
+          <div class="row">
+              <div class="offset-4 col-md-2 d-none d-md-block">
+                  <p>
+                    <small class="text-muted">Quantity</small>
+                  </p>
+                  </div>
+                  </div>
+        </div>
+        <hr class="mt-0">
+        <div *ngFor="let order of orders" class="product">
+          <div class="row">
+            <div class="col-4 col-md-2">
+                <p class="m-0">
+                     <!-- <small class="text-muted">{{ order.products[0].title }}</small>  -->
+                     <!-- <small class="text-muted">{{ order.products[0].prod.title }}</small>  -->
+
+                </p>
+            </div>
+            <div class="col-2 offset-4" *ngFor="let product of order.products">
+                 
+                <!-- <a routerLink="/product/{{ product.id }}">{{ product.title }}</a> -->
+                <p class="m-0" >
+                  <!-- <small class="text-muted">{{ product.quantity}}</small> -->
+                  <small class="text-muted">{{ product.quantity}}</small>
+                </p>              
+            </div>
+            <div class="col-md offset-4">
+                <p class="m-0">
+                    <small class="text-muted">{{ order.totalPrice }}</small>
+                    <small class="text-muted">{{ order.products[0].prod.title }}</small> 
+                  </p>           
+             </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

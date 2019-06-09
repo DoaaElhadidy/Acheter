@@ -1,0 +1,25 @@
+<div class="card bg-light my-5">
+  <div class="card-body">
+    <h4 class="card-title">Products</h4>
+<table class="table table-hovered">
+  <tr>
+    <th>#</th>
+    <th>Product Title</th>
+    <th>Product Description</th>
+    <th></th>
+  </tr>
+
+  <tr *ngFor="let product of products; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{ product.title }}</td>
+    <td>{{ product.description }}</td>
+
+    <td>
+      <button class="btn btn-danger" (click)="deleteProduct(i)" style="margin: 10px">Delete</button>
+    </td>
+  </tr>
+</table>
+<h3 *ngIf="products.length==0"> No Products Found </h3>
+</div>
+</div>
+

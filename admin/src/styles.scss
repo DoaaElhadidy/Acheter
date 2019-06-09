@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$main: #232f3e;
+.bg-main{
+    background-color: $main;
+}
+a{
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: none;
+    color: #ffc107;
+}
+button{
+    cursor: pointer;
+}
+section{
+    min-height:600px;
+}
+h5{
+    overflow-wrap:break-word;
+}
+.star{
+    position:relative;
+    display: inline-block;
+    font-size:2rem;
+    color: #d3d3d3;
+}
+.full
+{
+    color:gold;
+}
+.half
+{
+    position: absolute;
+    display: inline-block;
+    overflow:hidden;
+    color:gold;
+}
+.image{
+    display:block;
+    width:100%;
+    max-width:400px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:2rem;
+}
+body{
+    background-color: #f1f1f1;
+}

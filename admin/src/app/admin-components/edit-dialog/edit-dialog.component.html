@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Edit Category</h2>
+
+<mat-dialog-content>
+<p>Would you like to Edit ?</p>
+<input matInput [(ngModel)]="name" placeholder="Write New Name">
+ <p>{{data.catName}}</p> 
+<p></p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+<button mat-button mat-dialog-close >Cancel</button>
+<button mat-raised-button (click)="edit()" >Edit</button>
+
+</mat-dialog-actions>

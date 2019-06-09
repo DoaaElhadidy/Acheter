@@ -1,0 +1,7 @@
+<div *ngIf="categories" class="list-group">
+  <a *ngFor="let category of categories" [routerLink]="['/categories',category._id]" class="list-group-item list-group-item-action"> 
+
+   <i class="fa fa-bitbucket-square" aria-hidden="true" #catName ></i>
+   {{ category.name }}
+ </a>
+</div>

@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-main">
+  <div class="container-fluid">
+    <div class="col-2">
+      <a routerLink="/home" class="navbar-brand" style="color:#FFF;">
+        <img src="../assets/img/logo.png" alt="logo" id="logo" /> Acheter
+      </a>
+      <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="col-5">
+      <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse flex-column" id="navbarNav">
+        <div class="input-group">
+          <input type="text" name="search" id="searchBar" placeholder="Search . . ." class="control-form"
+            [(ngModel)]="searchTerm" (keyup.enter)="search()" style="width:90%">
+          <span id="searchBtn" class="bg-warning" (click)="search()">
+            <i class="fa fa-search"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div>
+        <ul class="navbar-nav">
+          <li class="nav-item ml-0 ml-md-2">
+            <a (click)="collapse()" routerLink="/home" routerLinkActive="active" class="nav-link">
+              <i class="fa fa-home mr-1"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item" ngbDropdown #dropdown="ngbDropdown">
+            <!-- <a (click)="collapse()" routerLink="/categories" routerLinkActive="active" class="nav-link dropdown-toggle"  ngbDropdownToggle> -->
+              <a  class="nav-link dropdown-toggle"  ngbDropdownToggle>
+            
+              <i class="fa fa-list mr-1"></i>
+              Categories
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu">
+    <app-categories></app-categories>
+            </div>
+          </li>
+          <li class="nav-item" ngbDropdown #dropdown="ngbDropdown">
+            <a class="nav-link dropdown-toggle" ngbDropdownToggle>
+              <i class="fa fa-user mr-1"></i>
+              <span *ngIf="!data.user">Accounts</span>
+              <span *ngIf="data.user">{{ data.user.name }}</span>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu">
+              <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/profile"
+                class="dropdown-item">
+                <i class="fa fa-user-circle" aria-hidden="true"></i> Profile
+              </a>
+              <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/login" class="dropdown-item">
+                <i class="fa fa-key" aria-hidden="true"></i> Login
+              </a>
+              <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();logout();" class="dropdown-item">
+                <i class="fa fa-key" aria-hidden="true"></i> Logout
+              </a>
+              <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/register"
+                class="dropdown-item">
+                <i class="fa fa-group" aria-hidden="true"></i> Register
+              </a>
+            </div>
+          </li>
+          <li class="nav-item ml-0 ml-md-2">
+            <a (click)="collapse()" routerLink="/cart" routerLinkActive="active" class="nav-link">
+              <i class="fa fa-shopping-cart mr-1"></i>
+              Cart
+              <span *ngIf="data.cartItems" class="badge badge-warning ml-1">{{ data.cartItems }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer id="main-footer" class="bg-main text-white">
+  <div class="container">
+    <p class="text-center">CopyRight &copy; 2019 Acheter</p>
+  </div>
+</footer>

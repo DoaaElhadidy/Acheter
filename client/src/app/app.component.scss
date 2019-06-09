@@ -1,0 +1,29 @@
+#searchBtn{
+    cursor: pointer;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem
+}
+#searchBar{
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    outline: 0;
+    border: none;
+}
+#logo{
+    width: 50px;
+}
+.navbar-nav{
+    justify-content: flex-end;
+}
+#searchBar{
+    padding: 5px;
+}
+footer{
+    padding: 15px;
+}
