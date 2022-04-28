@@ -11,7 +11,7 @@
   "dependencies": {
     "@types/mongoose": "^5.3.20",
     "algoliasearch": "^3.32.0",
-    "async": "^2.6.2",
+    "async": "^2.6.4",
     "aws-sdk": "^2.410.0",
     "bcrypt": "^3.0.4",
     "bcrypt-nodejs": "0.0.3",
